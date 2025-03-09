@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competitive Analysis Radar Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        canvas {
+            max-width: 600px;
+            max-height: 600px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>EdTech Competitive Analysis</h1>
+    <canvas id="radarChart"></canvas>
+
+    <script>
+        const ctx = document.getElementById('radarChart').getContext('2d');
+
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: [
+                    'Primary Channel', 
+                    'Pricing Model', 
+                    'Campaign Style', 
+                    'Unique Digital Innovations', 
+                    'Strength in Digital Marketing'
+                ],
+                datasets: [
+                    {
+                        label: 'Duolingo',
+                        data: [10, 8, 9, 10, 10],
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'Babbel',
+                        data: [8, 7, 6, 7, 7],
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'Rosetta Stone',
+                        data: [7, 6, 7, 9, 6],
+                        borderColor: 'rgba(255, 206, 86, 1)',
+                        backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'Memrise',
+                        data: [9, 7, 8, 8, 9],
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderWidth: 2
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    }
+                },
+                scales: {
+                    r: {
+                        suggestedMin: 0,
+                        suggestedMax: 10
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
